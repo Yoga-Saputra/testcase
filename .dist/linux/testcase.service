@@ -7,8 +7,8 @@ ConditionPathIsDirectory=/etc/testcase
 ConditionPathExists=/etc/rsyslog.d/syslog-testcase.conf
 ConditionPathIsDirectory=/var/log/testcase
 
-After=network.target postgresql.service redis-server.service
-Wants=network-online.target postgresql.service redis-server.service
+After=network.target postgresql.service
+Wants=network-online.target postgresql.service
 
 [Service]
 Type=simple
