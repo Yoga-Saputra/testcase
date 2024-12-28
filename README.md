@@ -23,6 +23,16 @@
 
 # Testcase API Guide
 
+## 🔀 How to Run :
+
+```js
+- clone the project using, git clone https://github.com/Yoga-Saputra/testcase.git
+- open the directory project and run go mod tidy then go mod vendor
+- create file .config.yaml like the example and set the configuration
+- This project can be run using air or using command go run main.go --run
+- if you want to run this project using air, make sure air already install  on your laptop
+```
+
 ## 🔀 Compatible Route Endpoint
 
 | NO  | Use                    | Endpoint                   | Example                                      | Action |
@@ -184,4 +194,41 @@ curl --location --request DELETE 'localhost:4040/v1/brand/delete/3'
     "data": "Brand ID [3] successfully deleted",
     "error": null
 }
+```
+
+## 📖 Excersise Essay
+
+### 💸 Project review dan Project planning
+
+```js
+## Project review adalah sebuah proses evaluasi dan tinjauan terhadap kemajuan , kualitas dari proyek yang sedang kita kembangkan.  Tujuannya untuk memastikan bahwa proyek yang sedang dikembangkan berjalan sesuai timeline yang sudah direncanakan
+## Project planning adalah sebuah tahapan perencanaan atau analisa yang dilakukan sebelum memulai pengembangan sistem atau aplikasi.
+```
+
+### 💸 Load balance dan Security group di AWS EC2
+
+```js
+## Load Balance adalah layanan yang mendistribusikan trafik masuk (incoming traffic) ke beberapa instances untuk memastikan aplikasi tetap berjalan secara optimal, ketika ada lonjakan trafik. Load balancer bertujuan untuk meningkatkan ketersediaan (availability) dan skalabilitas aplikasi dengan mendistribusikan beban secara merata, sehingga menghindari beban berlebih pada satu instance atau server.
+
+## dikarenakan saya belum pernah mempelajari security group di aws EC2 atau devops, saya kurang begitu paham, tapi saya sayang antusian untuk mempelajari lebih lanjut untuk aws dan dari hasil saya membaca beberapa artikel berfungsi sebagai firewall virtual yang mengontrol trafik masuk dan keluar ke EC2 instances. Security group memungkinkan untuk menetapkan aturan (rules) berdasarkan IP address, protokol, dan port untuk menentukan jenis trafik yang diperbolehkan atau ditolak ke atau dari instance EC2.
+```
+
+### 💸 Load balance dan Security group di AWS EC2
+
+```js
+## Contoh :
+    func memoryLeak() {
+        leakMap := make(map[int]*[]int) // Map yang menyimpan slice
+        for i := 0; i < 1000; i++ {
+            // Membuat slice baru untuk setiap iterasi
+            nSlice := make([]int, 10)
+            leakMap[i] = &nSlice  // Menyimpan referensi ke slice dalam map
+        }
+
+            // Setelah selesai digunakan, kita hapus referensinya
+        for i := 0; i < 1000; i++ {
+            delete(leakMap, i)  // Menghapus entri map setelah selesai digunakan
+        }
+    }
+Berdasarkan contoh diatas, dapat disimpulkan bahwa kita perlu memastikan bahwa objek yang tidak digunakan lagi bisa dibebaskan dari memori dengan cara menghapus referensinya.
 ```

@@ -20,5 +20,5 @@ type Repository interface {
 	) (int64, error)
 
 	Insert(a *entity.Product) error
-	Delete(productID uint64) error
+	Delete(productID uint64) (row int64, err error)
 }

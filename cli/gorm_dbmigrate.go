@@ -31,14 +31,6 @@ var dbMigrateCommands = cli{
 			optiondefaultValue: "",
 		},
 	},
-	boolOptions: []optionBool{
-		{
-			optionVar:          &seedRefresh,
-			optionName:         "seed-refresh",
-			optionUsage:        "-seed-refresh seed with refresh",
-			optiondefaultValue: false,
-		},
-	},
 }
 
 func dbMigrateRun() {

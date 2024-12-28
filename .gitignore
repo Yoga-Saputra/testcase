@@ -28,9 +28,7 @@ vendor
 /Godeps/
 
 # Env and Config
-.config.json
 .config.yaml
-.streaming-config.yml
 .custom-line.toml
 
 # MacOS

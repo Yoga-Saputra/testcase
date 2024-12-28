@@ -139,7 +139,7 @@ func (s *Service) FindByBrandId(productID interface{}) (*entity.Product, int, er
 }
 
 // // delete brandID
-func (s *Service) DeleteByProductID(productID uint64) error {
+func (s *Service) DeleteByProductID(productID uint64) (row int64, err error) {
 
 	return s.repo.Delete(productID)
 }

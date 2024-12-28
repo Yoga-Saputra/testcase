@@ -1,6 +1,7 @@
 package ucv1producthttp
 
 import (
+	"errors"
 	"fmt"
 	"log"
 	"strconv"
@@ -129,9 +130,19 @@ func (ds *domainService) Delete(c echo.Context) error {
 	// Since ParseUint returns a uint64, we need to explicitly cast it to uint64
 	pIDUint64 := uint64(pID)
 
-	err = ds.s.DeleteByProductID(pIDUint64)
-	if err != nil {
+	rows, err := ds.s.DeleteByProductID(pIDUint64)
+
+	switch {
+	// Always check error appear first
+	case err != nil:
 		if apiResp = std.APIResponseError(std.StatusServerError, err); apiResp != nil {
+			return c.JSON(int(apiResp.StatusCode), apiResp.Body)
+		} else {
+			return c.NoContent(500)
+		}
+
+	case rows == 0:
+		if apiResp = std.APIResponseError(std.StatusNotFound, errors.New("record not found")); apiResp != nil {
 			return c.JSON(int(apiResp.StatusCode), apiResp.Body)
 		} else {
 			return c.NoContent(500)

@@ -118,7 +118,10 @@ func (prd *ProductRepoDB) UpdateProduct(
 }
 
 // delete product
-func (prd *ProductRepoDB) Delete(brandID uint64) error {
+func (prd *ProductRepoDB) Delete(brandID uint64) (row int64, err error) {
 
-	return prd.db.Delete(&entity.Product{}, brandID).Error
+	tx := prd.db.Delete(&entity.Product{}, brandID)
+	row = tx.RowsAffected
+	err = tx.Error
+	return
 }
