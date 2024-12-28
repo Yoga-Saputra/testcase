@@ -213,7 +213,7 @@ curl --location --request DELETE 'localhost:4040/v1/brand/delete/3'
 ## dikarenakan saya belum pernah mempelajari security group di aws EC2 atau devops, saya kurang begitu paham, tapi saya sayang antusian untuk mempelajari lebih lanjut untuk aws dan dari hasil saya membaca beberapa artikel berfungsi sebagai firewall virtual yang mengontrol trafik masuk dan keluar ke EC2 instances. Security group memungkinkan untuk menetapkan aturan (rules) berdasarkan IP address, protokol, dan port untuk menentukan jenis trafik yang diperbolehkan atau ditolak ke atau dari instance EC2.
 ```
 
-### 💸 Load balance dan Security group di AWS EC2
+### 💸 Menangani issue memory leak di golang
 
 ```js
 ## Contoh :
