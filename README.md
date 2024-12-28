@@ -29,7 +29,7 @@
 - clone the project using, git clone https://github.com/Yoga-Saputra/testcase.git
 - open the directory project and run go mod tidy then go mod vendor
 - create file .config.yaml like the example and set the configuration
-- This project can be run using air or using command go run main.go --run
+- this project can be run using air or using command go run main.go --run
 - if you want to run this project using air, make sure air already install  on your laptop
 ```
 
